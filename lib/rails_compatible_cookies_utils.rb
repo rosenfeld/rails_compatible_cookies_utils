@@ -61,7 +61,7 @@ class RailsCompatibleCookiesUtils
   end
 
   def encrypted_secret
-    @encrypted_secret ||= generate_key(@encrypted_salt)[0, OpenSSL::Cipher.new(@cipher).key_len]
+    @encrypted_secret ||= generate_key(@encrypted_salt)[0, new_cipher.key_len]
   end
 
   def generate_key(salt)
